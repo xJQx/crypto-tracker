@@ -1,4 +1,5 @@
 import { Container, createTheme, LinearProgress, makeStyles, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Typography } from '@material-ui/core';
+import { Pagination } from '@material-ui/lab';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
@@ -32,9 +33,9 @@ const CoinsTable = () => {
 
     const darkTheme = createTheme({
         palette: {
-            main: "#fff",
+            main: "#fff"
         },
-        type: "dark"
+        type: "dark",
     })
 
     const handleSearch = () => {
@@ -52,6 +53,11 @@ const CoinsTable = () => {
                 backgroundColor: "#131111",
             },
             fontFamily: "Montserrat",
+        },
+        pagination: {
+            "& .MuiPaginationItem-root": {
+                color: "gold",
+            }
         }
     }));
 
@@ -158,6 +164,22 @@ const CoinsTable = () => {
                         )
                     }
                 </TableContainer>
+
+                <Pagination 
+                    count={(handleSearch()?.length/10).toFixed(0)}
+                    style={{
+                        padding: 20,
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                    }}
+                    color="primary"
+                    classes={{ ul: classes.pagination }}
+                    onChange={(_, value) => {
+                        setPage(value);
+                        window.scroll(0, 450);
+                    }}
+                />
             </Container>
         </ThemeProvider>
     )
