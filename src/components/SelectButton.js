@@ -1,6 +1,5 @@
 import { makeStyles } from '@material-ui/core'
 import React from 'react'
-import { Classnames } from 'react-alice-carousel'
 
 const SelectButton = ({ children, selected, onClick }) => {
     const useStyles = makeStyles({

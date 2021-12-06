@@ -1,7 +1,6 @@
 import { CircularProgress, createTheme, makeStyles, ThemeProvider } from '@material-ui/core';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Classnames } from 'react-alice-carousel';
 import { Line } from 'react-chartjs-2';
 import { HistoricalChart } from '../config/api';
 import { chartDays } from '../config/data';
@@ -22,7 +21,7 @@ const CoinInfo = ({ coin }) => {
 
     useEffect(() => {
         fetchHistoricData();
-        
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currency, days]);
     
 
