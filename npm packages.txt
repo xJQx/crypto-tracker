@@ -1,0 +1,18 @@
+// styles
+npm install @material-ui/core
+npm install @material-ui/lab
+
+// routing sites
+npm i react-router-dom
+
+// for get api
+npm i axios
+
+// for carousel
+npm i react-alice-carousel
+
+// parse html as proper description
+npm i react-html-parser
+
+// for charts
+npm install --save react-chartjs-2 chart.js
