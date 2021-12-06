@@ -113,7 +113,7 @@ const CoinsTable = () => {
                                         
                                         return (
                                             <TableRow
-                                                onClick={() => {history(`/coins/${row.id}`)}}
+                                                onClick={() => {history(`/crypto-tracker/coins/${row.id}`)}}
                                                 className={classes.row}
                                                 key={row.name}
                                             >
