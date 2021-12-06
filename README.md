@@ -14,3 +14,17 @@
 ## [Website](https://xjqx.github.io/crypto-tracker/)
 
 <img src="crypto-tracker.gif" alt="crypto-tracker gif" width=500 />
+
+## Tech Stack
+- `React` to build front end
+- `React Router Dom` to implement dynamic routing in a web app
+- `Material UI` to design beautiful user interface
+- `Chart.js` for data visualization
+- `Axios` to handle backend api
+
+## What can be done
+- `See` current cryptocurrency price
+- Switch between `SGD` and `USD`
+- `Search` for specific cryptocurrency
+- Switch between `different pages`
+- `Graph` tracking price over time
