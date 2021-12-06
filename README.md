@@ -13,3 +13,4 @@
 
 ## [Website](https://xjqx.github.io/crypto-tracker/)
 
+<img src="crypto-tracker.gif" alt="crypto-tracker gif" width=500 />
