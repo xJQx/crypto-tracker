@@ -16,3 +16,12 @@ npm i react-html-parser
 
 // for charts
 npm install --save react-chartjs-2 chart.js
+
+
+// BACKEND
+// Firebase
+npm install firebase
+
+// google button
+npm install react-google-button
+
