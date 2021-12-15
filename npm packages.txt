@@ -25,3 +25,6 @@ npm install firebase
 // google button
 npm install react-google-button
 
+// icons
+npm i react-icons
+
