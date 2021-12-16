@@ -20,7 +20,7 @@ const Login = ({ handleClose }) => {
         try {
             const result = await signInWithEmailAndPassword(auth, email, password);
 
-            setAlert({ open: true, message: `Login Successfull. Welcome ${result.user.email}`, type: "success"});
+            setAlert({ open: true, message: `Login Successful. Welcome ${result.user.email}`, type: "success"});
     
             handleClose();
         } catch (error) {

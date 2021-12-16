@@ -20,7 +20,7 @@ const Signup = ({ handleClose }) => {
         try {
             const result = await createUserWithEmailAndPassword(auth, email, password);
             
-            setAlert({ open: true, message: `Sign Up Successfull. Welcome ${result.user.email}`, type: "success"});
+            setAlert({ open: true, message: `Sign Up Successful. Welcome ${result.user.email}`, type: "success"});
     
             handleClose();
         } catch (error) {
