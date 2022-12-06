@@ -28,7 +28,6 @@ const SelectButton = ({ children, selected, onClick }) => {
     return (
         <span
             onClick={onClick}
-            onSelect={selected}
             className={classes.selectbutton}
         >
             {children}

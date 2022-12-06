@@ -1,4 +1,4 @@
-import { AppBar, Container, createTheme, makeStyles, MenuItem, Select, Toolbar, Typography, ThemeProvider } from '@material-ui/core';
+import { AppBar, Container, createTheme, makeStyles, MenuItem, Select, Toolbar, Typography, ThemeProvider, Box } from '@material-ui/core';
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { CryptoState } from '../CryptoContext';
@@ -6,12 +6,20 @@ import AuthModal from './Authentication/AuthModal';
 import UserSidebar from './Authentication/UserSidebar';
 
 const useStyles = makeStyles(() => ({
+    toolbar: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
     title: {
-        flex: 1,
         color: "gold",
         fontFamily: "Montserrat",
         fontWeight: "bold",
-        cursor: "pointer"
+        cursor: "pointer",
+    },
+    buttonBox: {
+        display: "flex",
+        flexDirection: "row"
     }
 }));
 
@@ -34,7 +42,7 @@ const Header = () => {
         <ThemeProvider theme={darkTheme}>
             <AppBar color='transparent' position='static'>
                 <Container>
-                    <Toolbar>
+                    <Toolbar className={classes.toolbar}>
                         <Typography 
                             onClick={() => history("/crypto-tracker/")} 
                             className={classes.title}
@@ -42,23 +50,25 @@ const Header = () => {
                         >
                             Crypto Tracker
                         </Typography>
+                        
+                        <Box className={classes.buttonBox}>
+                            <Select
+                                variant="outlined" 
+                                style={{
+                                    width: 100,
+                                    height: 40,
+                                    marginRight: 15,
+                                    color: "white"
+                                }}
+                                value={currency}
+                                onChange={(e) => setCurrency(e.target.value)}
+                            >
+                                <MenuItem value={"USD"}>USD</MenuItem>
+                                <MenuItem value={"SGD"}>SGD</MenuItem>
+                            </Select>
 
-                        <Select 
-                            variant="outlined" 
-                            style={{
-                                width: 100,
-                                height: 40,
-                                marginRight: 15,
-                                color: "white"
-                            }}
-                            value={currency}
-                            onChange={(e) => setCurrency(e.target.value)}
-                        >
-                            <MenuItem value={"USD"}>USD</MenuItem>
-                            <MenuItem value={"SGD"}>SGD</MenuItem>
-                        </Select>
-
-                        { user ? <UserSidebar /> : <AuthModal />}
+                            { user ? <UserSidebar /> : <AuthModal />}
+                        </Box>
                     </Toolbar>
                 </Container>
             </AppBar>

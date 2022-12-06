@@ -1,9 +1,7 @@
 import { Container, createTheme, LinearProgress, makeStyles, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Typography } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
-import { CoinList } from '../config/api';
 import { CryptoState } from '../CryptoContext';
 import { numberWithCommas } from './Banner/Carousel';
 
@@ -157,7 +155,7 @@ const CoinsTable = () => {
                 </TableContainer>
 
                 <Pagination 
-                    count={(handleSearch()?.length/10).toFixed(0)}
+                    count={parseInt((handleSearch()?.length/10).toFixed(0))}
                     style={{
                         padding: 20,
                         width: "100%",
